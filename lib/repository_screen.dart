@@ -121,6 +121,35 @@ class _RepositoryState extends State<Repository> {
                                     ),
                                   ],
                                 ),
+                                SizedBox(
+                                  height: 4,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Row(children: [
+                                        Expanded(
+                                          child: Text(
+                                            'Forks ${subcat[index].forks}',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[500]),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            'Watchers ${subcat[index].watchers}',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[500]),
+                                          ),
+                                        ),
+                                      ],),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
@@ -248,6 +277,8 @@ class _RepositoryState extends State<Repository> {
 
     });
   }
+
+
 }
 
 class Repositories {

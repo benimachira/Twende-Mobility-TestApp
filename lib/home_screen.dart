@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:twende_mobility_test_app/repository_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class MyHome extends StatefulWidget {
   _MyHomeState createState() => _MyHomeState();
@@ -187,25 +189,25 @@ class _MyHomeState extends State<MyHome> {
                       margin: EdgeInsets.all(16),
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Image.asset(
-                                'assets/git.png',
-                                height: 24,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Flexible(
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Repository(),
-                                      ),
-                                    );
-                                  },
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Repository(),
+                                ),
+                              );
+                            },
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/git.png',
+                                  height: 24,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
                                   child: Container(
                                     child: Text(
                                       'Repositories',
@@ -215,77 +217,92 @@ class _MyHomeState extends State<MyHome> {
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 28,
                           ),
-                          Row(
-                            children: [
-                              Icon(Icons.bookmark_border),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Flexible(
-                                child: Container(
+                          InkWell(
+                            onTap: () {
+                              _create_message();
+                            },
+                            child: Row(
+                              children: [
+                                Icon(Icons.bookmark_border),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
                                   child: Container(
-                                    child: Text(
-                                      'My projects',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w300),
+                                    child: Container(
+                                      child: Text(
+                                        'My projects',
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w300),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 28,
                           ),
-                          Row(
-                            children: [
-                              Icon(Icons.edit),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Flexible(
-                                child: Container(
+                          InkWell(
+                            onTap: () {
+                              _create_message();
+                            },
+                            child: Row(
+                              children: [
+                                Icon(Icons.edit),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
                                   child: Container(
-                                    child: Text(
-                                      'Edit profile',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w300),
+                                    child: Container(
+                                      child: Text(
+                                        'Edit profile',
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w300),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 28,
                           ),
-                          Row(
-                            children: [
-                              Icon(Icons.share),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Flexible(
-                                child: Container(
+                          InkWell(
+                            onTap: () {
+                              _create_message();
+                            },
+                            child: Row(
+                              children: [
+                                Icon(Icons.share),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
                                   child: Container(
-                                    child: Text(
-                                      'Share my profile',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w300),
+                                    child: Container(
+                                      child: Text(
+                                        'Share my profile',
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w300),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -310,6 +327,19 @@ class _MyHomeState extends State<MyHome> {
           }),
     );
   }
+  _create_message(){
+    Fluttertoast.showToast(
+        msg: "Feature coming soon",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+  }
+
+
 }
 
 class Account {
